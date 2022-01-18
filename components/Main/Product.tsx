@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Image from "next/image";
-import AddToCart from "./AddToCart";
 import { AnimatePresence } from "framer-motion";
+import Image from "next/image";
+
+import AddToCart from "./AddToCart";
 
 interface product {
   name: string;
@@ -20,7 +21,7 @@ const Product: React.FC<{ data: product }> = ({ data }) => {
         onMouseEnter={() => setShow(true)}
         onMouseLeave={() => setShow(false)}
       >
-        <Image src={image} alt={name} />
+        <Image alt={name} src={image} />
         <AnimatePresence>{show && <AddToCart />}</AnimatePresence>
       </div>
       <div className="flex flex-row justify-between mt-2 ">
