@@ -9,7 +9,7 @@ const HeaderQuote: React.FC = () => {
     <div className="relative mt-14">
       <hr />
       <div className="relative overflow-hidden whitespace-nowrap">
-        <p className="py-3.5 text-7xl -left-72">
+        <p className="relative py-3.5 text-7xl -left-72">
           A man can&apos;t have enough basement swag - A man can&apos;t have
           enough basement swag
         </p>
