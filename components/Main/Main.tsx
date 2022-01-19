@@ -24,7 +24,7 @@ const items: product[] = [
 
 const Main: React.FC = () => {
   return (
-    <div className="grid grid-cols-3 gap-8 mt-24 mx-7">
+    <div className="grid grid-cols-1 gap-8 mt-12 md:mt-24 sm:grid-cols-2 md:grid-cols-3 mx-7">
       {items.map((item, index) => (
         <Product key={index} data={item} />
       ))}

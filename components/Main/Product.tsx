@@ -16,7 +16,9 @@ const Product: React.FC<{ data: product }> = ({ data }) => {
         onMouseEnter={() => setShow(true)}
         onMouseLeave={() => setShow(false)}
       >
-        <Image alt={name} src={image} />
+        <div className="flex-1 ">
+          <Image alt={name} src={image} layout={"responsive"} />
+        </div>
         <AnimatePresence>
           {show && <AddToCart name={name} price={price} />}
         </AnimatePresence>

@@ -5,7 +5,7 @@ import footer from "../../public/footer.svg";
 
 const Footer: React.FC = () => {
   return (
-    <div className="mx-8 mt-12 text-center ">
+    <div className="mx-8 mt-4 text-center sm:mt-8 md:mt-12">
       <Image alt="footer img" layout={"responsive"} src={footer} />
     </div>
   );
