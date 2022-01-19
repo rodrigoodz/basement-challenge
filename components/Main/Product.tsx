@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { product } from "../../product/types";
 
 import AddToCart from "./AddToCart";
-
-interface product {
-  name: string;
-  price: number;
-  image?: any;
-}
 
 const Product: React.FC<{ data: product }> = ({ data }) => {
   const { name, price, image = null } = data;
@@ -22,7 +17,9 @@ const Product: React.FC<{ data: product }> = ({ data }) => {
         onMouseLeave={() => setShow(false)}
       >
         <Image alt={name} src={image} />
-        <AnimatePresence>{show && <AddToCart />}</AnimatePresence>
+        <AnimatePresence>
+          {show && <AddToCart name={name} price={price} />}
+        </AnimatePresence>
       </div>
       <div className="flex flex-row justify-between mt-2 ">
         <p className="text-xl ">{name}</p>

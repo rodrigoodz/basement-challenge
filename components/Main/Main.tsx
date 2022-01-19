@@ -2,11 +2,7 @@ import React from "react";
 
 import Product from "./Product";
 
-interface product {
-  name: string;
-  price: number;
-  image?: any;
-}
+import { product } from "../../product/types";
 
 const items: product[] = [
   {
