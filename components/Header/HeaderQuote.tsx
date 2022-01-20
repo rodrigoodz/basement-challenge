@@ -18,7 +18,7 @@ const HeaderQuote: React.FC = () => {
       <div className="absolute hidden -top-4 left-24 md:block">
         <Image alt="shape2" src={shape2} />
       </div>
-      <div className="absolute hidden -top-32 right-32 md:block">
+      <div className="absolute hidden -top-24 right-32 md:block">
         <Image alt="shape1" src={shape1} />
       </div>
     </div>

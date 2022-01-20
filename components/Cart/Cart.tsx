@@ -33,7 +33,7 @@ const Cart: React.FC<Props> = ({
       as={motion.div}
       open={true}
       onClose={onClose}
-      className="absolute inset-0 z-50 w-screen overflow-x-hidden overflow-y-auto bg-black border md:bottom-auto md:left-auto md:float-left md:border md:w-5/12"
+      className="absolute inset-0 z-50 w-screen overflow-x-hidden overflow-y-auto bg-black border md:bottom-auto md:left-auto md:float-left md:border md:w-8/12 lg:w-6/12"
       animate={{ opacity: 1, right: 1 }}
       exit={{ opacity: 0, right: 0 }}
       initial={{ opacity: 0, right: 0.75 }}
@@ -47,7 +47,7 @@ const Cart: React.FC<Props> = ({
           → CLOSE
         </p>
         <div className="text-center ">
-          <p className="mt-4 font-bold text-8xl md:mt-9 sm:text-4xl md:text-7xl lg:text-7xl xl:text-8xl ">
+          <p className="mt-4 font-bold text-8xl md:mt-9 sm:text-8xl md:text-7xl lg:text-7xl xl:text-8xl ">
             YOUR CART
           </p>
         </div>
@@ -69,15 +69,15 @@ const Cart: React.FC<Props> = ({
         </div>
       </div>
       <div className="flex flex-col justify-between w-full md:border md:flex-row">
-        <div className="flex justify-between px-8 py-2 md:py-6 md:flex-row">
-          <p className="text-xl md:text-4xl">TOTAL: </p>
-          <p className="text-xl md:ml-2 md:text-4xl">
+        <div className="flex justify-between w-full px-8 py-2 md:py-6 md:flex-row">
+          <p className="text-xl md:text-3xl">TOTAL: </p>
+          <p className="text-xl md:ml-2 md:text-3xl">
             ${totalPrice.toFixed(2)}
           </p>
         </div>
         <div className="mx-8 text-center border-t md:border-none md:mx-0">
           <p
-            className="py-3 text-5xl cursor-pointer md:px-8 md:py-6 md:border-l md:text-4xl"
+            className="py-3 text-5xl cursor-pointer md:px-8 md:py-6 md:border-l sm:text-6xl md:text-3xl"
             ref={checkoutButtonRef}
             onClick={() => alert(JSON.stringify(cartProducts))}
           >

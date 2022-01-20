@@ -11,11 +11,17 @@ interface Props {
 const CartItem: React.FC<Props> = ({ product, onAdd, onRemove }) => {
   return (
     <div className="flex flex-row h-auto px-3 py-3 mx-8 mb-8 border">
-      <div className="relative w-32 bg-gradient-to-t from-gradientColor">
-        <Image alt={product.name} src={product.image} layout="fill" />
+      <div className="relative flex items-center justify-center w-32 bg-gradient-to-t from-gradientColor">
+        <Image
+          alt={product.name}
+          src={product.image}
+          layout="fixed"
+          width={"100%"}
+          height={"100%"}
+        />
       </div>
       <div className="flex flex-col flex-1 px-3 text-left md:justify-between">
-        <h1 className="text-sm font-bold md:text-4xl">
+        <h1 className="text-sm font-bold sm:text-2xl md:text-3xl lg:text-4xl">
           {product.name.toUpperCase()}
         </h1>
         <div>
