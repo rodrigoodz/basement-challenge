@@ -8,8 +8,8 @@ const HeaderQuote: React.FC = () => {
   return (
     <div className="relative mt-2 md:mt-14">
       <hr />
-      <div className="relative overflow-hidden whitespace-nowrap">
-        <p className="relative py-2 md:py-3.5 text-lg sm:text-4xl md:text-7xl -left-36 sm:-left-44 md:-left-72 font-bold">
+      <div className="relative overflow-hidden whitespace-nowrap ">
+        <p className="relative left-full py-2 md:py-3.5 text-lg sm:text-4xl md:text-7xl  font-bold w-full animate-marquee">
           A man can&apos;t have enough basement swag - A man can&apos;t have
           enough basement swag
         </p>

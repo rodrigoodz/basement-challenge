@@ -5,7 +5,17 @@ module.exports = {
     colors: {
       gradientColor: "#1D1D1D",
     },
-    extend: {},
+    extend: {
+      animation: {
+        marquee: "marquee 15s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-300%)" },
+        },
+      },
+    },
   },
   variants: {
     extend: {},
