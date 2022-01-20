@@ -10,3 +10,10 @@ export interface Product {
   name: string;
   options: Option[];
 }
+
+export interface CartProduct {
+  image: string;
+  name: string;
+  price: number;
+  quantity: number;
+}
