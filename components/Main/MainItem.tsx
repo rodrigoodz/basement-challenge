@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { product } from "../../product/types";
+import { Product } from "../../product/types";
 
 import AddToCart from "./AddToCart";
 
-const Product: React.FC<{ data: product }> = ({ data }) => {
-  const { name, price, image = null } = data;
+const MainItem: React.FC<{ data: Product }> = ({ data }) => {
+  const { name, price, image } = data;
   const [show, setShow] = useState<Boolean>(false);
 
   return (
@@ -16,8 +16,14 @@ const Product: React.FC<{ data: product }> = ({ data }) => {
         onMouseEnter={() => setShow(true)}
         onMouseLeave={() => setShow(false)}
       >
-        <div className="flex-1 ">
-          <Image alt={name} src={image} layout={"responsive"} />
+        <div className="flex justify-center flex-1">
+          <Image
+            alt={name}
+            src={image}
+            layout={"fixed"}
+            width={256}
+            height={400}
+          />
         </div>
         <AnimatePresence>
           {show && (
@@ -33,4 +39,4 @@ const Product: React.FC<{ data: product }> = ({ data }) => {
   );
 };
 
-export default Product;
+export default MainItem;

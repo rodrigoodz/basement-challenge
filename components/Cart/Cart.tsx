@@ -17,7 +17,7 @@ const Cart: React.FC<{ cart: product; onClose: () => void }> = ({
 
   return (
     <motion.div
-      className="absolute top-0 right-0 z-50 w-screen max-h-screen border min-h-96 md:w-5/12 "
+      className="absolute top-0 right-0 left-auto z-50 w-screen md:border md:w-5/12 "
       style={{ backgroundColor: "black" }}
       animate={{ opacity: 1, right: 1 }}
       exit={{ opacity: 0, right: 0 }}
@@ -36,7 +36,7 @@ const Cart: React.FC<{ cart: product; onClose: () => void }> = ({
             YOUR CART
           </p>
         </div>
-        <div className="mt-4 overflow-y-auto ">
+        <div className="mt-4 overflow-y-auto h-96">
           {(cart as any).map((c: product, index: number) => (
             <CartItem key={index} cartitem={c} />
           ))}

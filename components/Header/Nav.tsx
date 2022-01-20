@@ -14,16 +14,15 @@ const Nav: React.FC = () => {
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("cart") as string) || [];
-    console.log(data);
     setCart(data);
   }, []);
 
   return (
-    <header className="flex flex-row items-center justify-between mx-4 mt-8 md:mx-8">
+    <header className="flex flex-row items-center justify-between mx-4 mt-8 md:mx-8 ">
       <AnimatePresence>
         {showCart && <Cart cart={cart} onClose={() => setShowCart(false)} />}
       </AnimatePresence>
-      <div className="hidden sm:block">
+      <div className="hidden sm:block ">
         <Image alt="logo" src={logo} />
       </div>
       <div className="sm:hidden">
