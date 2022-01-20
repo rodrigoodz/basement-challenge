@@ -1,6 +1,12 @@
-export interface product {
-  name: string;
+interface Option {
+  label: string;
+  values: string[];
+}
+
+export interface Product {
+  id: string;
+  image: string;
   price: number;
-  quantity: number;
-  image?: any;
+  name: string;
+  options: Option[];
 }
