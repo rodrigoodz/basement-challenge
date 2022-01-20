@@ -6,29 +6,24 @@ import addtocart from "../../public/addtocart.svg";
 
 import { product } from "../../product/types";
 
-interface cartProduct {
-  name: string;
-  quantity: number;
-  totalPrice: number;
-}
-
-const AddToCart: React.FC<product> = ({ name, price }) => {
+const AddToCart: React.FC<product> = ({ name, price, image, quantity }) => {
   const handleClick = () => {
     const data = JSON.parse(localStorage.getItem("cart") as string) || [];
 
-    const findIndex = data.findIndex((d: cartProduct) => d.name === name);
+    const findIndex = data.findIndex((d: product) => d.name === name);
 
-    let newData: cartProduct[] = [];
+    let newData: product[] = [];
 
     // me fijo el producto ya esta en el localStorage
     if (findIndex !== -1) {
-      // si ya esta armo un nuevo array modificando la cantidad y totalPrice del producto en cuestion
-      newData = data.map((d: cartProduct) => {
+      // si ya esta armo un nuevo array modificando la cantidad y price del producto en cuestion
+      newData = data.map((d: product) => {
         if (d.name === name) {
           return {
             name: name,
             quantity: d.quantity + 1,
-            totalPrice: (d.quantity + 1) * price,
+            price: price,
+            image: image.default.src,
           };
         } else {
           return d;
@@ -40,8 +35,9 @@ const AddToCart: React.FC<product> = ({ name, price }) => {
         ...data,
         {
           name: name,
-          quantity: 1,
-          totalPrice: price,
+          quantity: quantity,
+          price: price,
+          image: image.default.src,
         },
       ];
     }
@@ -55,7 +51,7 @@ const AddToCart: React.FC<product> = ({ name, price }) => {
       className="absolute inset-0 flex items-center justify-center"
       exit={{ opacity: 0, scale: 0 }}
       initial={{ opacity: 0, scale: 0.75 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3 }}
     >
       <Image
         alt={"add to cart"}

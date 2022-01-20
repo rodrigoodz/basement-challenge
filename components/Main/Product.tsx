@@ -20,7 +20,9 @@ const Product: React.FC<{ data: product }> = ({ data }) => {
           <Image alt={name} src={image} layout={"responsive"} />
         </div>
         <AnimatePresence>
-          {show && <AddToCart name={name} price={price} />}
+          {show && (
+            <AddToCart name={name} price={price} image={image} quantity={1} />
+          )}
         </AnimatePresence>
       </div>
       <div className="flex flex-row justify-between mt-2 ">

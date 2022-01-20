@@ -9,16 +9,19 @@ const items: product[] = [
     name: "Black t-shirt",
     price: 7.95,
     image: require("../../public/products/shirt.png"),
+    quantity: 1,
   },
   {
     name: "Black hoodie",
     price: 13,
     image: require("../../public/products/hoodie.png"),
+    quantity: 1,
   },
   {
     name: "Black cap",
     price: 23,
     image: require("../../public/products/cap.png"),
+    quantity: 1,
   },
 ];
 
