@@ -15,6 +15,7 @@ const MainItem: React.FC<{ data: Product }> = ({ data }) => {
         className="relative border-b-2 bg-gradient-to-t from-gradientColor"
         onMouseEnter={() => setShow(true)}
         onMouseLeave={() => setShow(false)}
+        onClick={() => setShow(true)}
       >
         <div className="flex items-center justify-center">
           <Image
