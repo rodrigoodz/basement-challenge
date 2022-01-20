@@ -16,7 +16,7 @@
   {
     "id": "black-cap",
     "image": "/products/cap.png",
-    "price": 13,
+    "price": 23,
     "name": "Black cap",
     "options": [{ "label": "size", "values": ["S", "M", "L", "XL"] }]
   }
