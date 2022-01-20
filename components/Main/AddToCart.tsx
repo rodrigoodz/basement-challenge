@@ -51,7 +51,7 @@ const AddToCart: React.FC<{ product: Product }> = ({ product }) => {
       className="absolute inset-0 flex items-center justify-center"
       exit={{ opacity: 0, scale: 0 }}
       initial={{ opacity: 0, scale: 0.75 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.2 }}
     >
       <Image
         alt={"add to cart"}
