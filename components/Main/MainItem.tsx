@@ -12,7 +12,7 @@ const MainItem: React.FC<{ data: Product }> = ({ data }) => {
   return (
     <div className="">
       <div
-        className="relative flex-1 border-b-2 bg-gradient-to-t from-gradientColor"
+        className="relative flex items-center justify-center flex-1 border-b-2 bg-gradient-to-t from-gradientColor"
         onMouseEnter={() => setShow(true)}
         onMouseLeave={() => setShow(false)}
       >
@@ -26,9 +26,7 @@ const MainItem: React.FC<{ data: Product }> = ({ data }) => {
           />
         </div>
         <AnimatePresence>
-          {show && (
-            <AddToCart name={name} price={price} image={image} quantity={1} />
-          )}
+          {show && <AddToCart product={data} />}
         </AnimatePresence>
       </div>
       <div className="flex flex-row justify-between mt-2 ">

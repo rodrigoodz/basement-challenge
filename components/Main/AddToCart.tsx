@@ -4,26 +4,26 @@ import { motion } from "framer-motion";
 
 import addtocart from "../../public/addtocart.svg";
 
-import { product } from "../../product/types";
+import { Product } from "../../product/types";
 
-const AddToCart: React.FC<product> = ({ name, price, image, quantity }) => {
+const AddToCart: React.FC<{ product: Product }> = ({ product }) => {
   const handleClick = () => {
     const data = JSON.parse(localStorage.getItem("cart") as string) || [];
 
-    const findIndex = data.findIndex((d: product) => d.name === name);
+    const findIndex = data.findIndex((d: Product) => d.name === product.name);
 
-    let newData: product[] = [];
+    let newData: Product[] = [];
 
     // me fijo el producto ya esta en el localStorage
     if (findIndex !== -1) {
       // si ya esta armo un nuevo array modificando la cantidad y price del producto en cuestion
-      newData = data.map((d: product) => {
-        if (d.name === name) {
+      newData = data.map((d: any) => {
+        if (d.name === product.name) {
           return {
-            name: name,
+            name: product.name,
             quantity: d.quantity + 1,
-            price: price,
-            image: image.default.src,
+            price: product.price,
+            image: product.image,
           };
         } else {
           return d;
@@ -34,10 +34,10 @@ const AddToCart: React.FC<product> = ({ name, price, image, quantity }) => {
       newData = [
         ...data,
         {
-          name: name,
-          quantity: quantity,
-          price: price,
-          image: image.default.src,
+          name: product.name,
+          quantity: 1,
+          price: product.price,
+          image: product.image,
         },
       ];
     }
